@@ -1,0 +1,25 @@
+{
+  "name": "math-battle",
+  "version": "1.0.0",
+  "scripts": {
+    "compile": "tsc",
+    "watch": "tsc --watch",
+    "start": "node dist/index.js",
+    "test": "mocha --require ts-node/register test/**/*.test.ts"
+  },
+  "keywords": [
+    "learning",
+    "game"
+  ],
+  "author": "Vladislav Mozharov <mrkeksz@yandex.ru>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.2.21",
+    "@types/mocha": "^8.2.3",
+    "@types/node": "^16.3.3",
+    "chai": "^4.3.4",
+    "mocha": "^9.0.2",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  }
+}
