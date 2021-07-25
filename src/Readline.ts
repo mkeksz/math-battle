@@ -10,11 +10,24 @@ export default class Readline {
     })
   }
 
-  public askQuestion(question: string, callback: (answer: string) => void) {
-    this.readlineInterface.question(question, callback)
+  /**
+   * Ожидает текстовый ответ от пользователя в командной строке и отправляет этот ответ в callback.
+   * @param callback Обработчик текстового ответа пользователя.
+   * @return {Promise<string>} Promise ожидающий текстовый ответ от пользователя.
+   */
+  public waitInput(callback: (inputText: string) => void): void {
+    this.readlineInterface.resume()
+    this.readlineInterface.question('', callback)
   }
 
-  public close() {
+  /**
+   * Закрывает ожидание ответа в командной строке от пользователя.
+   */
+  public close(): void {
     this.readlineInterface.close()
+  }
+
+  public pause(): void {
+    this.readlineInterface.pause()
   }
 }

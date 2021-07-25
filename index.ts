@@ -1,5 +1,4 @@
 import Game from './src/Game'
 
-const game: Game = new Game()
-
-game.startGame()
+const mathBattle = new Game()
+mathBattle.startGame(3000)
