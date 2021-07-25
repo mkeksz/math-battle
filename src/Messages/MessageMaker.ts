@@ -8,7 +8,7 @@ export default class MessageMaker {
   }
 
   protected getStartMessage(): string {
-    return `Игра начинается! (Время на каждый вопрос: ${this.game.millisecondsToAnswer}с.)`
+    return `Игра начинается! (Время на каждый вопрос: ${this.game.millisecondsToAnswer / 1000}с.)`
   }
 
   protected getHeroDeadMessage(): string {

@@ -4,9 +4,9 @@
 
 `npm install`
 
-**Компиляция TypeScript**
+**Сборка проекта**
 
-`npm run compile`
+`npm run build`
 
 **Запуск игры**
 
