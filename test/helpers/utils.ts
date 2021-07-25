@@ -1,6 +1,6 @@
-const assert =  require('chai')
+import assert from 'chai'
 
-export function shouldThrowFunction(func: Function, message?: string): void {
+export function shouldThrowFunction(func: () => any, message?: string): void {
   try {
     func()
     assert.assert(true)
@@ -9,5 +9,5 @@ export function shouldThrowFunction(func: Function, message?: string): void {
 }
 
 export function filterUniqueValuesOfArray(array: any[]): any[] {
-  return array.filter((value, index) => array.indexOf(value) == index)
+  return array.filter((value: any, index: number): boolean => array.indexOf(value) === index)
 }

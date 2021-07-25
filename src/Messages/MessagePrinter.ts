@@ -1,8 +1,8 @@
 import MessageMaker from './MessageMaker'
 
 export default class MessagePrinter extends MessageMaker{
-  public printStartMessage(): void {
-    console.info(this.getStartMessage())
+  public printGameOverMessage(): void {
+    this.game.enemy.healthPoints <= 0 ? this.printEnemyDeadMessage() : this.printHeroDeadMessage()
   }
 
   public printHeroDeadMessage(): void {
@@ -13,8 +13,8 @@ export default class MessagePrinter extends MessageMaker{
     console.info(this.getEnemyDeadMessage())
   }
 
-  public printGameOverMessage(): void {
-    this.game.enemy.healthPoints <= 0 ? this.printEnemyDeadMessage() : this.printHeroDeadMessage()
+  public printStartMessage(): void {
+    console.info(this.getStartMessage())
   }
 
   public printTimeIsOverMessage(): void {
@@ -27,5 +27,9 @@ export default class MessagePrinter extends MessageMaker{
 
   public printAttackForEnemyMessage(): void {
     console.info(this.getAttackForEnemyMessage())
+  }
+
+  public printQuestion(): void {
+    console.info(this.game.question)
   }
 }

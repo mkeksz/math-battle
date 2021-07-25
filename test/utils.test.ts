@@ -8,8 +8,11 @@ describe('getRandomBool', () => {
   })
 
   it('Возвращает случайное булево значение',  () => {
+    const countIterate = 100
     const randomBooleans: boolean[] = []
-    for (let i = 0; i < 100; i++) {randomBooleans.push(getRandomBool())}
+    for (let i = 0; i < countIterate; i++) {
+      randomBooleans.push(getRandomBool())
+    }
     const uniqueBooleans: boolean[] = filterUniqueValuesOfArray(randomBooleans)
     assert.isTrue(uniqueBooleans.length > 1)
   })
@@ -17,25 +20,34 @@ describe('getRandomBool', () => {
 
 describe('getRandomInt', () => {
   it('Возвращает целое число', () => {
-    for (let i = 0; i < 5; i++) {assert.isTrue(Number.isInteger(getRandomInt(-10, 10)))}
+    const min = -10.23
+    const max = 10.45
+    const countIterate = 5
+    for (let i = 0; i < countIterate; i++) {
+      const isInteger = Number.isInteger(getRandomInt(min, max))
+      assert.isTrue(isInteger)
+    }
   })
 
   it('Возвращает число равное min <= result < max', () => {
-    const min: number = -1
-    const max: number = 1
-    for (let i = 0; i < 10; i++) {
-      const result: number = getRandomInt(min, max)
-      assert.isTrue(min <= result && result < max)
+    const countIterate = 10
+    const min = 0
+    const max = 1
+    for (let i = 0; i < countIterate; i++) {
+      const result = getRandomInt(min, max)
+      assert.isTrue(result === min)
     }
   })
 
   it('Возвращает случайное число',  () => {
-    const min: number = -1000
-    const max: number = 1000
+    const countIterate = 10
+    const min = -1000
+    const max = 1000
     const randomNumbers: number[] = []
-    for (let i = 0; i < 10; i++) {randomNumbers.push(getRandomInt(min, max))}
+    for (let i = 0; i < countIterate; i++) {
+      randomNumbers.push(getRandomInt(min, max))
+    }
     const uniqueNumbers: number[] = filterUniqueValuesOfArray(randomNumbers)
-
     assert.isTrue(uniqueNumbers.length > 1)
   })
 
@@ -45,9 +57,5 @@ describe('getRandomInt', () => {
 
   it('Выдаст ошибку если аргумент min равен аргументу max', () => {
     shouldThrowFunction(() => getRandomInt(1, 1))
-  })
-
-  it('Сработает с дробными числами в аргументах', () => {
-    assert.isTrue(Number.isInteger(getRandomInt(1.534, 5.234)))
   })
 })

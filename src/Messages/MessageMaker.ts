@@ -3,12 +3,13 @@ import Game from '../Game'
 export default class MessageMaker {
   protected game: Game
 
-  constructor(game: Game) {
+  public constructor(game: Game) {
     this.game = game
   }
 
   protected getStartMessage(): string {
-    return `Игра начинается! (Время на каждый вопрос: ${this.game.millisecondsToAnswer / 1000}с.)`
+    const millisecondsInSecond = 1000
+    return `Игра начинается! (Время на каждый вопрос: ${this.game.millisecondsToAnswer / millisecondsInSecond}с.)`
   }
 
   protected getHeroDeadMessage(): string {

@@ -1,7 +1,7 @@
 import readline from 'readline'
 
 export default class Readline {
-  private readlineInterface: readline.Interface
+  private readonly readlineInterface: readline.Interface
 
   public constructor() {
     this.readlineInterface = readline.createInterface({
@@ -20,9 +20,6 @@ export default class Readline {
     this.readlineInterface.question('', callback)
   }
 
-  /**
-   * Закрывает ожидание ответа в командной строке от пользователя.
-   */
   public close(): void {
     this.readlineInterface.close()
   }
