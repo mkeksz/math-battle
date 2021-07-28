@@ -13,7 +13,7 @@
     "target": "ESNEXT",
     "module": "commonjs",
     "allowJs": true,
-    "declaration": true,
+    "declaration": false,
     "outDir": "dist",
     "removeComments": true,
     "strict": true,

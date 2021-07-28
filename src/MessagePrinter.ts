@@ -2,14 +2,14 @@ import MessageMaker from './MessageMaker'
 
 export default class MessagePrinter extends MessageMaker{
   public printGameOverMessage(): void {
-    this.game.enemy.healthPoints <= 0 ? this.printEnemyDeadMessage() : this.printHeroDeadMessage()
+    this.game.enemy.getHealth() <= 0 ? this.printEnemyDeadMessage() : this.printHeroDeadMessage()
   }
 
-  public printHeroDeadMessage(): void {
+  private printHeroDeadMessage(): void {
     console.info(this.getHeroDeadMessage())
   }
 
-  public printEnemyDeadMessage(): void {
+  private printEnemyDeadMessage(): void {
     console.info(this.getEnemyDeadMessage())
   }
 
@@ -21,15 +21,15 @@ export default class MessagePrinter extends MessageMaker{
     console.info(this.getTimeIsOverMessage())
   }
 
-  public printAttackForHeroMessage(): void {
-    console.info(this.getAttackForHeroMessage())
+  public printAttackFromEnemyToHeroMessage(): void {
+    console.info(this.getAttackFromEnemyToHeroMessage())
   }
 
-  public printAttackForEnemyMessage(): void {
-    console.info(this.getAttackForEnemyMessage())
+  public printAttackFromHeroToEnemyMessage(): void {
+    console.info(this.getAttackFromHeroToEnemyMessage())
   }
 
   public printQuestion(): void {
-    console.info(this.game.question)
+    console.info(this.game.expression.getExpressionAsString())
   }
 }

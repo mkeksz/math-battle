@@ -1,22 +1,6 @@
 import {assert} from 'chai'
-import {getRandomBool, getRandomInt} from '../src/utils'
+import {getRandomInt} from '../src/core/utils'
 import {filterUniqueValuesOfArray, shouldThrowFunction} from './helpers/utils'
-
-describe('getRandomBool', () => {
-  it('Возвращает булево значение', () => {
-    assert.typeOf(getRandomBool(), 'boolean')
-  })
-
-  it('Возвращает случайное булево значение',  () => {
-    const countIterate = 100
-    const randomBooleans: boolean[] = []
-    for (let i = 0; i < countIterate; i++) {
-      randomBooleans.push(getRandomBool())
-    }
-    const uniqueBooleans: boolean[] = filterUniqueValuesOfArray(randomBooleans)
-    assert.isTrue(uniqueBooleans.length > 1)
-  })
-})
 
 describe('getRandomInt', () => {
   it('Возвращает целое число', () => {

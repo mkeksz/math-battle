@@ -28,12 +28,7 @@
     },
     "no-empty-interface": true,
     "no-for-in": true,
-    "no-inferrable-types": {
-      "options": "ignore-params",
-      "severity": "error"
-    },
     "no-internal-module": true,
-    "no-magic-numbers": true,
     "no-namespace": [true, "allow-declarations"],
     "no-non-null-assertion": true,
     "no-reference": true,
@@ -48,7 +43,6 @@
       "object-destructuring",
       "array-destructuring"
     ],
-
     "unified-signatures": true,
     "ban-comma-operator": true,
     "curly": [true, "ignore-same-line"],
@@ -107,6 +101,7 @@
       "options": [0],
       "severity": "error"
     },
+    "no-trailing-whitespace": false,
     "unnecessary-bind": true,
     "unnecessary-else": true,
     "eofline": true,

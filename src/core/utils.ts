@@ -5,6 +5,8 @@ export function getRandomInt(min: number, max: number): number {
   return Math.floor(Math.random() * (maxFloor - minCeil)) + minCeil
 }
 
-export function getRandomBool(): boolean {
-  return Boolean(Math.round(Math.random()))
+export function getRandomValueOfEnum<T extends object>(anEnum: T): T[keyof T] {
+  const values = Object.values(anEnum)
+  const randomIndex = getRandomInt(0, values.length)
+  return values[randomIndex]
 }
