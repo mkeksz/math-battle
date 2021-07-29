@@ -1,16 +1,11 @@
 import {LIMITS_EXPRESSION} from './DEFAULT_VALUES'
 import {getRandomInt, getRandomValueOfEnum} from './utils'
-
-enum MathSymbols {
-  Multiplication = '*',
-  Plus = '+',
-  Minus = '-'
-}
+import {MathSymbols} from './expression.enums'
 
 export default class Expression {
-  private numberOne: number = 0
-  private numberTwo: number = 0
-  private mathSymbol: MathSymbols = MathSymbols.Plus
+  public numberOne: number = 0
+  public numberTwo: number = 0
+  public mathSymbol: MathSymbols = MathSymbols.Plus
 
   public generateRandomExpression(): void {
     this.numberOne = getRandomInt(LIMITS_EXPRESSION.min, LIMITS_EXPRESSION.max)

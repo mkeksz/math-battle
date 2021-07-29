@@ -6,29 +6,26 @@ describe('getRandomInt', () => {
   it('Возвращает целое число', () => {
     const min = -10.23
     const max = 10.45
-    const countIterate = 5
-    for (let i = 0; i < countIterate; i++) {
+    for (let i = 0; i < 5; i++) {
       const isInteger = Number.isInteger(getRandomInt(min, max))
       assert.isTrue(isInteger)
     }
   })
 
   it('Возвращает число равное min <= result < max', () => {
-    const countIterate = 10
     const min = 0
     const max = 1
-    for (let i = 0; i < countIterate; i++) {
+    for (let i = 0; i < 10; i++) {
       const result = getRandomInt(min, max)
       assert.isTrue(result === min)
     }
   })
 
   it('Возвращает случайное число',  () => {
-    const countIterate = 10
-    const min = -1000
-    const max = 1000
+    const min = 1000
+    const max = 2000
     const randomNumbers: number[] = []
-    for (let i = 0; i < countIterate; i++) {
+    for (let i = 0; i < 10; i++) {
       randomNumbers.push(getRandomInt(min, max))
     }
     const uniqueNumbers: number[] = filterUniqueValuesOfArray(randomNumbers)
