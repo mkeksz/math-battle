@@ -1,8 +1,13 @@
 import {LIMITS_EXPRESSION} from './DEFAULT_VALUES'
 import {getRandomInt, getRandomValueOfEnum} from './utils'
-import {MathSymbols} from './expression.enums'
 
-export default class Expression {
+export enum MathSymbols {
+  Multiplication = '*',
+  Plus = '+',
+  Minus = '-'
+}
+
+export class Expression {
   public numberOne: number = 0
   public numberTwo: number = 0
   public mathSymbol: MathSymbols = MathSymbols.Plus

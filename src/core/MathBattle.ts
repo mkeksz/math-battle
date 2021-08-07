@@ -1,12 +1,12 @@
-import EventEmitter from 'events'
 import {DEFAULT_ENEMY, DEFAULT_HERO} from './DEFAULT_VALUES'
 import {EventsMathBattle} from './mathBattle.enums'
+import {Expression} from './Expression'
 import Character from './Character'
-import Expression from './Expression'
 import Timer from './Timer'
+import Emitter from './Emitter'
 
 export default class MathBattle {
-  public readonly emitter: EventEmitter
+  public readonly emitter: Emitter
   public readonly expression: Expression
   public readonly hero: Character
   public readonly enemy: Character
@@ -18,7 +18,7 @@ export default class MathBattle {
     this.hero = DEFAULT_HERO
     this.enemy = DEFAULT_ENEMY
     this.expression = new Expression()
-    this.emitter = new EventEmitter()
+    this.emitter = new Emitter()
     this.timer = new Timer(millisecondsToAnswer)
     this.gameStarted = false
   }

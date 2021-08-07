@@ -1,6 +1,5 @@
 import {assert} from 'chai'
-import Expression from '../src/core/Expression'
-import {MathSymbols} from '../src/core/expression.enums'
+import {Expression, MathSymbols} from '../src/core/Expression'
 import {filterUniqueValuesOfArray} from './helpers/utils'
 
 describe('Expression', () => {
